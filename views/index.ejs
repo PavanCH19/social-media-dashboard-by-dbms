@@ -57,7 +57,7 @@
             display: inline-block;
             width: 100%;
             background-color: hsl(225, 100%, 98%);
-            height: 280px;
+            height: 140px;
         }
 
         hr {
@@ -435,19 +435,161 @@
             }
         }
 
+        #nav-container {
+            pointer-events: none;
+            z-index: 1;
+        }
+
+
+        #nav-container .bg {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 100px);
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s;
+            background: #000;
+            z-index: 1;
+        }
+
+        #nav-container:focus-within .bg {
+            visibility: visible;
+            opacity: .6;
+        }
+
+        #nav-container * {
+            visibility: visible;
+        }
+
+        .nav-button {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1;
+            border: 0;
+            background: transparent;
+            height: 100px;
+            width: 30px;
+            cursor: pointer;
+            pointer-events: auto;
+            margin-left: 25px;
+            touch-action: manipulation;
+        }
+
+        .icon-bar {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #aaa;
+            transition: .3s;
+        }
+
+        .icon-bar+.icon-bar {
+            margin-top: 5px;
+        }
+
+        #nav-container:focus-within .button {
+            pointer-events: none;
+        }
+
+        #nav-container:focus-within .icon-bar:nth-of-type(1) {
+            transform: translate3d(0, 8px, 0) rotate(45deg);
+        }
+
+        #nav-container:focus-within .icon-bar:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        #nav-container:focus-within .icon-bar:nth-of-type(3) {
+            transform: translate3d(0, -8px, 0) rotate(-45deg);
+        }
+
+        #nav-content {
+            margin-top: 100px;
+            padding: 20px;
+            width: 90%;
+            max-width: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: calc(100% - 100px);
+            background: #ececec;
+            pointer-events: auto;
+            transform: translateX(-100%);
+            transition: transform .3s;
+            z-index: 1;
+        }
+
+        #nav-content ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #nav-content li a {
+            padding: 10px 5px;
+            display: block;
+            text-transform: uppercase;
+            transition: color .1s;
+        }
+
+        #nav-content li a:hover {
+            color: #BF7497;
+        }
+
+        #nav-container:focus-within #nav-content {
+            transform: none;
+        }
+
+        .main-title-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: hsl(225, 100%, 98%)
+        }
+
+        .main-title {
+            padding-left: 80px;
+        }
+
         /* #endregion */
     </style>
 </head>
 
 <body class="light-theme">
-    <header>
-        <div class="header-wrapper">
-            <div class="title-followers">
+    <div id="nav-container">
+        <div class="bg"></div>
+        <div class="main-title-container">
+            <span class="nav-button" tabindex="0">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </span>
+            <span class="main-title">
                 <h1>Social Media Dashboard</h1>
                 <h3 id="total-followers">Total Followers: <%= totalFollowers %>
                 </h3>
-            </div>
-            <hr>
+            </span>
+        </div>
+        <div id="nav-content" tabindex="0">
+            <ul>
+                <li><a href="#0">Home</a></li>
+                <li><a href="#0">Services</a></li>
+                <li><a href="#0">Blog</a></li>
+                <li><a href="#0">About</a></li>
+                <li><a href="#0">Contact</a></li>
+                <li class="small"><a href="#0">Facebook</a><a href="#0">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+    <header>
+        <div class="header-wrapper">
+            <!-- <h1>Social Media Dashboard</h1>
+            <h3 id="total-followers">Total Followers: <%= totalFollowers %>
+            </h3> -->
         </div>
     </header>
 
