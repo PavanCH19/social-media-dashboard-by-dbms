@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard - Multiple Line Charts</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #1D2671, #C33764);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .charts-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .chart-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-bottom: 30px;
+            height: 500px;
+            /* Increased height for chart containers */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #1D2671;
+            font-weight: 700;
+        }
+
+        canvas {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .charts-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                height: 350px;
+                /* Adjust height for smaller screens */
+            }
+        }
+    </style>
+    <script src="../data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1"></script>
+</head>
+
+<body>
+
+    <div class="charts-wrapper">
+        <div class="chart-container">
+            <h1>Facebook</h1>
+            <canvas id="engagementChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h1>Twitter</h1>
+            <canvas id="followersChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h1>Instagram</h1>
+            <canvas id="sharesChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h1>YouTube</h1>
+            <canvas id="commentsChart"></canvas>
+        </div>
+    </div>
+
+
+    <script>
+        // Define window.data first
+        window.data = {
+            facebook_followers: [10, 12, 9, 15, 17, 20, 18, 14, 16, 14, 13, 12],
+            facebook_pageviews: [8, 7, 6, 9, 10, 11, 9, 8, 7, 6, 8, 7],
+            twitter_followers: [10, 9, 8, 7, 6, 9, 10, 8, 9, 11, 10, 8],
+            twitter_likes: [6, 5, 8, 17, 20, 16, 10, 8, 6, 5, 7, 9],
+            inst_followers: [15, 14, 17, 16, 19, 20, 18, 15, 17, 16, 18, 20],
+            inst_likes: [12, 10, 9, 8, 11, 12, 13, 14, 15, 13, 11, 12],
+            youtube_subscribers: [10, 12, 11, 13, 14, 15, 16, 18, 17, 16, 14, 15],
+            youtube_likes: [9, 10, 8, 7, 9, 8, 10, 12, 11, 10, 9, 10]
+        };
+
+
+
+
+
+        const {
+            facebook_followers,
+            facebook_pageviews,
+            twitter_followers,
+            twitter_likes,
+            inst_followers,
+            inst_likes,
+            youtube_subscribers,
+            youtube_likes
+        } = window.data;
+
+        const engagementData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [
+                {
+                    label: 'New Followers (in hundreds)',
+                    data: facebook_followers,
+                    borderColor: '#1D2671',
+                    backgroundColor: 'rgba(29, 38, 113, 0.2)',
+                    pointBackgroundColor: '#1D2671',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#1D2671',
+                    pointHoverBorderColor: '#ffffff',
+                    tension: 0.4,
+                    borderWidth: 3,
+                },
+                {
+                    label: 'Page views (in hundreds)',
+                    data: facebook_pageviews,
+                    borderColor: '#00C851',
+                    backgroundColor: 'rgba(0, 200, 81, 0.2)',
+                    pointBackgroundColor: '#00C851',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#00C851',
+                    pointHoverBorderColor: '#ffffff',
+                    tension: 0.4,
+                    borderWidth: 3,
+                }
+            ]
+        };
+
+        const followersData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [
+                {
+                    label: 'New Followers (in hundreds)',
+                    data: twitter_followers,
+                    borderColor: '#C33764',
+                    backgroundColor: 'rgba(195, 55, 100, 0.2)',
+                    pointBackgroundColor: '#C33764',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#C33764',
+                    pointHoverBorderColor: '#ffffff',
+                    tension: 0.4,
+                    borderWidth: 3,
+                },
+                {
+                    label: 'Likes (in hundreds)',
+                    data: twitter_likes,
+                    borderColor: '#FFBB33',
+                    backgroundColor: 'rgba(255, 187, 51, 0.2)',
+                    pointBackgroundColor: '#FFBB33',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#FFBB33',
+                    pointHoverBorderColor: '#ffffff',
+                    tension: 0.4,
+                    borderWidth: 3,
+                }
+            ]
+        };
+
+        const sharesData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [
+                {
+                    label: 'New Followers (in hundreds)',
+                    data: inst_followers,
+                    borderColor: '#FF5722',
+                    backgroundColor: 'rgba(255, 87, 34, 0.2)',
+                    pointBackgroundColor: '#FF5722',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#FF5722',
+                    pointHoverBorderColor: '#ffffff',
+                    tension: 0.4,
+                    borderWidth: 3,
+                },
+                {
+                    label: 'Likes (in hundreds)',
+                    data: inst_likes,
+                    borderColor: '#9C27B0',
+                    backgroundColor: 'rgba(156, 39, 176, 0.2)',
+                    pointBackgroundColor: '#9C27B0',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#9C27B0',
+                    pointHoverBorderColor: '#ffffff',
+                    tension: 0.4,
+                    borderWidth: 3,
+                }
+            ]
+        };
+
+        const commentsData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [
+                {
+                    label: 'Subscribers (in hundreds)',
+                    data: youtube_subscribers,
+                    borderColor: '#673AB7',
+                    backgroundColor: 'rgba(103, 58, 183, 0.2)',
+                    pointBackgroundColor: '#673AB7',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#673AB7',
+                    pointHoverBorderColor: '#ffffff',
+                    tension: 0.4,
+                    borderWidth: 3,
+                },
+                {
+                    label: 'Likes (in hundreds)',
+                    data: youtube_likes,
+                    borderColor: '#2196F3',
+                    backgroundColor: 'rgba(33, 150, 243, 0.2)',
+                    pointBackgroundColor: '#2196F3',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#2196F3',
+                    pointHoverBorderColor: '#ffffff',
+                    tension: 0.4,
+                    borderWidth: 3,
+                }
+            ]
+        };
+
+        const options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#1D2671',
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: '#C33764',
+                    titleColor: '#ffffff',
+                    bodyColor: '#ffffff',
+                    borderWidth: 1,
+                    borderColor: '#ffffff',
+                    padding: 10,
+                    cornerRadius: 10,
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Days of the Week',
+                        color: '#1D2671',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        },
+                        padding: 50
+                    },
+                    ticks: {
+                        color: '#1D2671',
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Values',
+                        color: '#1D2671',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        }
+                    },
+                    ticks: {
+                        color: '#1D2671',
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            }
+        };
+
+        // Engagement Chart
+        const engagementCtx = document.getElementById('engagementChart').getContext('2d');
+        new Chart(engagementCtx, {
+            type: 'line',
+            data: engagementData,
+            options: options
+        });
+
+        // Followers Chart
+        const followersCtx = document.getElementById('followersChart').getContext('2d');
+        new Chart(followersCtx, {
+            type: 'line',
+            data: followersData,
+            options: options
+        });
+
+        // Shares Chart
+        const sharesCtx = document.getElementById('sharesChart').getContext('2d');
+        new Chart(sharesCtx, {
+            type: 'line',
+            data: sharesData,
+            options: options
+        });
+
+        // Comments Chart
+        const commentsCtx = document.getElementById('commentsChart').getContext('2d');
+        new Chart(commentsCtx, {
+            type: 'line',
+            data: commentsData,
+            options: options
+        });
+    </script>
+
+</body>
+
+</html>

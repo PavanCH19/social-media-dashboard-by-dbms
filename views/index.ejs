@@ -555,6 +555,254 @@
             padding-left: 80px;
         }
 
+        /* Profile Information Section */
+        .profile_info {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            /* Ensure content is aligned */
+            margin-bottom: 20px;
+        }
+
+        /* Profile Image */
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        /* Name Container */
+        .name-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Edit/Share Buttons Section */
+        .editShare {
+            margin-top: 20px;
+        }
+
+        /* Style for Edit Button */
+        button.edit {
+            padding: 12px 24px;
+            margin: 8px;
+            cursor: pointer;
+            border: none;
+            /* Remove border for a cleaner look */
+            background-color: #2196F3;
+            /* Blue background for Edit */
+            color: white;
+            /* Text color */
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            /* Smooth transition for all properties */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for depth */
+        }
+
+        /* Hover State for Edit */
+        button.edit:hover {
+            background-color: #1976D2;
+            /* Darker blue on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            /* Slightly stronger shadow on hover */
+            transform: translateY(-2px);
+            /* Subtle lift effect */
+        }
+
+        /* Active (pressed) state for Edit */
+        button.edit:active {
+            background-color: #1565C0;
+            /* Even darker blue */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Reset shadow */
+            transform: translateY(2px);
+            /* Slight depression effect */
+        }
+
+        /* Focus state for Edit */
+        button.edit:focus {
+            outline: none;
+            /* Remove default outline */
+            box-shadow: 0 0 0 2px rgba(72, 133, 237, 0.5);
+            /* Blue outline for focus */
+        }
+
+        /* Style for Share Button */
+        button.share {
+            padding: 12px 24px;
+            margin: 8px;
+            cursor: pointer;
+            border: none;
+            /* Remove border for a cleaner look */
+            background-color: #00BCD4;
+            /* Light blue background for Share */
+            color: white;
+            /* Text color */
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            /* Smooth transition for all properties */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for depth */
+        }
+
+        /* Hover State for Share */
+        button.share:hover {
+            background-color: #00ACC1;
+            /* Slightly darker blue on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            /* Slightly stronger shadow on hover */
+            transform: translateY(-2px);
+            /* Subtle lift effect */
+        }
+
+        /* Active (pressed) state for Share */
+        button.share:active {
+            background-color: #0097A7;
+            /* Even darker blue for active state */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Reset shadow */
+            transform: translateY(2px);
+            /* Slight depression effect */
+        }
+
+        /* Focus state for Share */
+        button.share:focus {
+            outline: none;
+            /* Remove default outline */
+            box-shadow: 0 0 0 2px rgba(72, 133, 237, 0.5);
+            /* Blue outline for focus */
+        }
+
+
+
+        /* Edit Profile Section */
+        #edit-profile-section {
+            margin-top: 60px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            /* Rounded corners for a modern look */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            /* Softer, larger shadow */
+            max-width: 600px;
+            /* Limit width for better layout */
+            margin-left: auto;
+            margin-right: auto;
+            /* Center the section */
+        }
+
+        /* Form Elements in Edit Profile */
+        #edit-profile-section form input {
+            margin: 2px 0;
+            padding: 12px;
+            width: 100%;
+            /* Full width */
+            border-radius: 6px;
+            /* Rounded corners */
+            border: 1px solid #ddd;
+            font-size: 16px;
+            color: #333;
+            background-color: #f8f8f8;
+            /* Light background */
+            transition: all 0.3s ease;
+            /* Smooth transition */
+        }
+
+        #edit-profile-section form input:focus {
+            border-color: #4CAF50;
+            /* Green border on focus */
+            background-color: #fff;
+            /* White background on focus */
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+            /* Soft green glow */
+            outline: none;
+            /* Remove default outline */
+        }
+
+        /* Submit Button Styling */
+        button[type="submit"] {
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            /* Green background */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            /* Rounded corners */
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            /* Smooth transition */
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+            /* Slightly darker green */
+            transform: translateY(-2px);
+            /* Lift effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Slight shadow */
+        }
+
+        button[type="submit"]:active {
+            background-color: #388e3c;
+            /* Darker green on click */
+            transform: translateY(2px);
+            /* Depression effect */
+            box-shadow: none;
+            /* Remove shadow when clicked */
+        }
+
+        /* Cancel Button Styling */
+        #cancel-button {
+            margin-top: 15px;
+            padding: 12px 24px;
+            background-color: #f44336;
+            /* Red background */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            /* Rounded corners */
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            /* Smooth transition */
+            width: 100%;
+        }
+
+        #cancel-button:hover {
+            background-color: #e53935;
+            /* Darker red on hover */
+            transform: translateY(-2px);
+            /* Lift effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Slight shadow */
+        }
+
+        #cancel-button:active {
+            background-color: #c62828;
+            /* Even darker red on click */
+            transform: translateY(2px);
+            /* Depression effect */
+            box-shadow: none;
+            /* Remove shadow when clicked */
+        }
+
+
         /* #endregion */
     </style>
 </head>
@@ -575,177 +823,272 @@
             </span>
         </div>
         <div id="nav-content" tabindex="0">
-            <ul>
-                <li><a href="#0">Home</a></li>
-                <li><a href="#0">Services</a></li>
-                <li><a href="#0">Blog</a></li>
-                <li><a href="#0">About</a></li>
-                <li><a href="#0">Contact</a></li>
-                <li class="small"><a href="#0">Facebook</a><a href="#0">Instagram</a></li>
-            </ul>
+            <div class="profile_info">
+                <div class="profile">
+                    <!-- Display profile image -->
+                    <img src="<%= profile_image ? 'data:image/jpeg;base64,' + profile_image : '/default-profile.jpg' %>"
+                        alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%;">
+                </div>
+                <div class="name-container">
+                    <label for="name">Username: </label>
+                    <div class="name">
+                        <%= userId %>
+                    </div>
+                </div>
+            </div>
+
+            <button class="analytics" id="openAnalyticsButton">Analytics</button>
+
+
+            <!-- "Edit" and "Share" buttons -->
+            <div class="editShare">
+                <button class="edit" id="editBtn">Edit</button>
+                <button class="share">Share</button>
+            </div>
+
+            <!-- Edit Profile Section (hidden initially) -->
+            <div id="edit-profile-section" style="display: none;">
+                <h2>Edit Profile</h2>
+                <form action="/update-profile" method="POST" enctype="multipart/form-data">
+                    <!-- Username Field -->
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="<%= userId %>" required><br><br>
+
+                    <!-- Current Password Field -->
+                    <label for="current_password">Current Password:</label>
+                    <input type="password" id="current_password" name="current_password" required><br><br>
+
+                    <!-- New Profile Image -->
+                    <label for="new_profile_image">New Profile Image:</label>
+                    <input type="file" id="new_profile_image" name="new_profile_image" accept="image/*"><br><br>
+
+                    <!-- Submit Button -->
+                    <button type="submit">Update Profile</button>
+
+                    <!-- Cancel Button (reset the form or close the edit section) -->
+                    <button type="button" id="cancel-button">Cancel</button>
+                </form>
+                <!-- Check if errorMessage exists and display it
+                <% if (typeof errorMessage !=='undefined' ) { %>
+                    <script type="text/javascript">
+                        alert("<%= errorMessage %>");
+                    </script>
+                    <% } %> -->
+            </div>
         </div>
-    </div>
-    <header>
-        <div class="header-wrapper">
-            <!-- <h1>Social Media Dashboard</h1>
+        <header>
+            <div class="header-wrapper">
+                <!-- <h1>Social Media Dashboard</h1>
             <h3 id="total-followers">Total Followers: <%= totalFollowers %>
             </h3> -->
-        </div>
-    </header>
+            </div>
+        </header>
 
-    <div class="kpi-wrapper">
-        <!-- Facebook KPI -->
-        <div class="kpi-card">
-            <div class="card-top-facebook"></div>
-            <div class="kpi-card-top">
-                <div class="icon"><img src="../images/icon-facebook.svg" alt="facebook"></div>
-                <div class="handle">
-                    <p id="facebook-handle">
-                        <%= facebookHandle %>
-                    </p>
+        <div class="kpi-wrapper">
+            <!-- Facebook KPI -->
+            <div class="kpi-card">
+                <div class="card-top-facebook"></div>
+                <div class="kpi-card-top">
+                    <div class="icon"><img src="../images/icon-facebook.svg" alt="facebook"></div>
+                    <div class="handle">
+                        <p id="facebook-handle">
+                            <%= facebookHandle %>
+                        </p>
+                    </div>
+                </div>
+                <div class="kpi" id="facebook-followers">
+                    <%= facebookFollowers %>
+                </div>
+                <div>
+                    <h4 class="unit-of-measure">FOLLOWERS</h4>
+                </div>
+                <div>
+                    <p class="delta up">&#9652; <span id="facebook-delta">
+                            <%= facebookDelta %>
+                        </span> Today</p>
                 </div>
             </div>
-            <div class="kpi" id="facebook-followers">
-                <%= facebookFollowers %>
-            </div>
-            <div>
-                <h4 class="unit-of-measure">FOLLOWERS</h4>
-            </div>
-            <div>
-                <p class="delta up">&#9652; <span id="facebook-delta">
-                        <%= facebookDelta %>
-                    </span> Today</p>
-            </div>
-        </div>
 
-        <!-- Twitter KPI -->
-        <div class="kpi-card">
-            <div class="card-top-twitter"></div>
-            <div class="kpi-card-top">
-                <div class="icon"><img src="resources/images/icon-twitter.svg" alt="twitter"></div>
-                <div class="handle">
-                    <p id="twitter-handle">
-                        <%= twitterHandle %>
-                    </p>
+            <!-- Twitter KPI -->
+            <div class="kpi-card">
+                <div class="card-top-twitter"></div>
+                <div class="kpi-card-top">
+                    <div class="icon"><img src="resources/images/icon-twitter.svg" alt="twitter"></div>
+                    <div class="handle">
+                        <p id="twitter-handle">
+                            <%= twitterHandle %>
+                        </p>
+                    </div>
+                </div>
+                <div class="kpi" id="twitter-followers">
+                    <%= twitterFollowers %>
+                </div>
+                <div>
+                    <h4 class="unit-of-measure">FOLLOWERS</h4>
+                </div>
+                <div>
+                    <p class="delta up">&#9652; <span id="twitter-delta">
+                            <%= twitterDelta %>
+                        </span> Today</p>
                 </div>
             </div>
-            <div class="kpi" id="twitter-followers">
-                <%= twitterFollowers %>
-            </div>
-            <div>
-                <h4 class="unit-of-measure">FOLLOWERS</h4>
-            </div>
-            <div>
-                <p class="delta up">&#9652; <span id="twitter-delta">
-                        <%= twitterDelta %>
-                    </span> Today</p>
-            </div>
-        </div>
 
-        <!-- Instagram KPI -->
-        <div class="kpi-card">
-            <div class="card-top-instagram"></div>
-            <div class="kpi-card-top">
-                <div class="icon"><img src="resources/images/icon-instagram.svg" alt="instagram"></div>
-                <div class="handle">
-                    <p id="instagram-handle">
-                        <%= instagramHandle %>
-                    </p>
+            <!-- Instagram KPI -->
+            <div class="kpi-card">
+                <div class="card-top-instagram"></div>
+                <div class="kpi-card-top">
+                    <div class="icon"><img src="resources/images/icon-instagram.svg" alt="instagram"></div>
+                    <div class="handle">
+                        <p id="instagram-handle">
+                            <%= instagramHandle %>
+                        </p>
+                    </div>
+                </div>
+                <div class="kpi" id="instagram-followers">
+                    <%= instagramFollowers %>
+                </div>
+                <div>
+                    <h4 class="unit-of-measure">FOLLOWERS</h4>
+                </div>
+                <div>
+                    <p class="delta up">&#9652; <span id="instagram-delta">
+                            <%= instagramDelta %>
+                        </span> Today</p>
                 </div>
             </div>
-            <div class="kpi" id="instagram-followers">
-                <%= instagramFollowers %>
-            </div>
-            <div>
-                <h4 class="unit-of-measure">FOLLOWERS</h4>
-            </div>
-            <div>
-                <p class="delta up">&#9652; <span id="instagram-delta">
-                        <%= instagramDelta %>
-                    </span> Today</p>
-            </div>
-        </div>
 
-        <!-- YouTube KPI -->
-        <div class="kpi-card">
-            <div class="card-top-youtube"></div>
-            <div class="kpi-card-top">
-                <div class="icon"><img src="resources/images/icon-youtube.svg" alt="youtube"></div>
-                <div class="handle">
-                    <p id="youtube-handle">
-                        <%= youtubeHandle %>
-                    </p>
+            <!-- YouTube KPI -->
+            <div class="kpi-card">
+                <div class="card-top-youtube"></div>
+                <div class="kpi-card-top">
+                    <div class="icon"><img src="resources/images/icon-youtube.svg" alt="youtube"></div>
+                    <div class="handle">
+                        <p id="youtube-handle">
+                            <%= youtubeHandle %>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="kpi" id="youtube-subscribers">
-                <%= youtubeSubscribers %>
-            </div>
-            <div>
-                <h4 class="unit-of-measure">SUBSCRIBERS</h4>
-            </div>
-            <div>
-                <p class="delta down">&#9662; <span id="youtube-delta">
-                        <%= youtubeDelta %>
-                    </span> Today</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="overview-header">
-        <h2>Overview - today</h2>
-    </div>
-
-    <div class="overview-kpis">
-        <div class="overview-wrapper">
-            <!-- Facebook Page Views -->
-            <div class="kpi-small">
-                <div class="page-views">Page Views</div>
-                <div class="logo"><img src="resources/images/icon-facebook.svg" alt="facebook"></div>
-                <div class="views" id="facebook-page-views">
-                    <%= facebookPageViews %>
+                <div class="kpi" id="youtube-subscribers">
+                    <%= youtubeSubscribers %>
                 </div>
-                <div class="movement up">&#9652; <span id="facebook-page-movement">
-                        <%= facebookPageMovement %>
-                    </span></div>
-            </div>
-
-            <!-- Twitter Page Views -->
-            <div class="kpi-small">
-                <div class="page-views">Likes</div>
-                <div class="logo"><img src="resources/images/icon-twitter.svg" alt="twitter"></div>
-                <div class="views" id="twitter-page-views">
-                    <%= twitterPageViews %>
+                <div>
+                    <h4 class="unit-of-measure">SUBSCRIBERS</h4>
                 </div>
-                <div class="movement up">&#9652; <span id="twitter-page-movement">
-                        <%= twitterPageMovement %>
-                    </span></div>
-            </div>
-
-            <!-- Instagram Page Views -->
-            <div class="kpi-small">
-                <div class="page-views">Likes</div>
-                <div class="logo"><img src="resources/images/icon-instagram.svg" alt="instagram"></div>
-                <div class="views" id="instagram-page-views">
-                    <%= instagramPageViews %>
+                <div>
+                    <p class="delta down">&#9662; <span id="youtube-delta">
+                            <%= youtubeDelta %>
+                        </span> Today</p>
                 </div>
-                <div class="movement up">&#9652; <span id="instagram-page-movement">
-                        <%= instagramPageMovement %>
-                    </span></div>
-            </div>
-
-            <!-- YouTube Page Views -->
-            <div class="kpi-small">
-                <div class="page-views">Likes</div>
-                <div class="logo"><img src="resources/images/icon-youtube.svg" alt="youtube"></div>
-                <div class="views" id="youtube-page-views">
-                    <%= youtubePageViews %>
-                </div>
-                <div class="movement up">&#9652; <span id="youtube-page-movement">
-                        <%= youtubePageMovement %>
-                    </span></div>
             </div>
         </div>
-    </div>
+
+        <div class="overview-header">
+            <h2>Overview - today</h2>
+        </div>
+
+        <div class="overview-kpis">
+            <div class="overview-wrapper">
+                <!-- Facebook Page Views -->
+                <div class="kpi-small">
+                    <div class="page-views">Page Views</div>
+                    <div class="logo"><img src="resources/images/icon-facebook.svg" alt="facebook"></div>
+                    <div class="views" id="facebook-page-views">
+                        <%= facebookPageViews %>
+                    </div>
+                    <div class="movement up">&#9652; <span id="facebook-page-movement">
+                            <%= facebookPageMovement %>
+                        </span></div>
+                </div>
+
+                <!-- Twitter Page Views -->
+                <div class="kpi-small">
+                    <div class="page-views">Likes</div>
+                    <div class="logo"><img src="resources/images/icon-twitter.svg" alt="twitter"></div>
+                    <div class="views" id="twitter-page-views">
+                        <%= twitterPageViews %>
+                    </div>
+                    <div class="movement up">&#9652; <span id="twitter-page-movement">
+                            <%= twitterPageMovement %>
+                        </span></div>
+                </div>
+
+                <!-- Instagram Page Views -->
+                <div class="kpi-small">
+                    <div class="page-views">Likes</div>
+                    <div class="logo"><img src="resources/images/icon-instagram.svg" alt="instagram"></div>
+                    <div class="views" id="instagram-page-views">
+                        <%= instagramPageViews %>
+                    </div>
+                    <div class="movement up">&#9652; <span id="instagram-page-movement">
+                            <%= instagramPageMovement %>
+                        </span></div>
+                </div>
+
+                <!-- YouTube Page Views -->
+                <div class="kpi-small">
+                    <div class="page-views">Likes</div>
+                    <div class="logo"><img src="resources/images/icon-youtube.svg" alt="youtube"></div>
+                    <div class="views" id="youtube-page-views">
+                        <%= youtubePageViews %>
+                    </div>
+                    <div class="movement up">&#9652; <span id="youtube-page-movement">
+                            <%= youtubePageMovement %>
+                        </span></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // JavaScript to handle Edit button click
+            document.getElementById('editBtn').addEventListener('click', function () {
+                var editProfileSection = document.getElementById('edit-profile-section');
+                var profileInfo = document.querySelector('.profile_info');
+
+                // Toggle visibility of the profile info and the edit profile section
+                if (editProfileSection.style.display === 'none' || editProfileSection.style.display === '') {
+                    editProfileSection.style.display = 'block';  // Show edit section
+                    profileInfo.style.display = 'none';  // Hide profile info
+                } else {
+                    editProfileSection.style.display = 'none';  // Hide edit section
+                    profileInfo.style.display = 'flex';  // Show profile info again
+                }
+            });
+
+            // JavaScript for form validation and cancel button behavior
+            document.querySelector('form').addEventListener('submit', function (event) {
+                const newPassword = document.getElementById('new_password').value;
+                const confirmPassword = document.getElementById('confirm_password').value;
+
+                // Check if the new password and confirm password match
+                if (newPassword !== confirmPassword) {
+                    alert('New password and confirm password do not match.');
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
+
+            // Cancel button functionality (reset form or hide the edit section)
+            document.getElementById('cancel-button').addEventListener('click', function () {
+                // Option 1: Reset the form but ensure the profile image is visible
+                document.querySelector('form').reset();  // Reset the form fields
+
+                // Option 2: Hide the edit section if you want (toggle visibility)
+                const editProfileSection = document.getElementById('edit-profile-section');
+                editProfileSection.style.display = 'none';  // Hide the edit form
+
+                // Option 3: Show profile info again (including profile image)
+                const profileInfo = document.querySelector('.profile_info');
+                profileInfo.style.display = 'flex';  // Show profile info again
+            });
+
+            document.getElementById('openAnalyticsButton').addEventListener('click', function () {
+                window.location.href = '/dashboard/admin/analytics'; // Redirect to analytics page
+            });
+
+
+
+
+
+        </script>
+
 </body>
 
 </html>
