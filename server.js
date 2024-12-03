@@ -71,6 +71,7 @@ app.post('/', (req, res) => {
         } else {
             // Render the login page with an error message
             //res.render('login', { errorMessage: 'Invalid userId or password' });
+            res.send("invalid useid or password")
         }
     });
 });

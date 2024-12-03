@@ -802,6 +802,47 @@
             /* Remove shadow when clicked */
         }
 
+        /* General styles for the Analytics button */
+        #openAnalyticsButton {
+            background-color: #4CAF50;
+            /* Green background */
+            color: white;
+            /* White text */
+            border: none;
+            /* No border */
+            border-radius: 5px;
+            /* Rounded corners */
+            padding: 10px 20px;
+            /* Top and bottom padding, left and right padding */
+            font-size: 16px;
+            /* Text size */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            /* Smooth transition */
+        }
+
+        #openAnalyticsButton:hover {
+            background-color: #45a049;
+            /* Slightly darker green on hover */
+            transform: scale(1.05);
+            /* Slight scaling effect on hover */
+        }
+
+        #openAnalyticsButton:focus {
+            outline: none;
+            /* Removes the default outline on focus */
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+            /* Green outline for focus */
+        }
+
+        #openAnalyticsButton:active {
+            background-color: #388e3c;
+            /* Darker green when button is pressed */
+            transform: scale(0.98);
+            /* Slight shrink effect when clicked */
+        }
+
 
         /* #endregion */
     </style>
