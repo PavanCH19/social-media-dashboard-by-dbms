@@ -70,12 +70,12 @@ app.post('/', (req, res) => {
             res.redirect(`/dashboard/${results[0].userId}`);
         } else {
             // Render the login page with an error message
-            res.render('login', { errorMessage: 'Invalid userId or password' });
+            //res.render('login', { errorMessage: 'Invalid userId or password' });
         }
     });
 });
 
-//hello
+
 // Multer for file upload
 const storage = multer.memoryStorage(); // Store file in memory (not on disk)
 const upload = multer({ storage: storage });
